@@ -15,7 +15,7 @@ export const NavBar = ({ title }: NavBarProps): JSX.Element => {
                     <MenuIcon />
                 </IconButton>
             </Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>{title}</Typography>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, paddingRight: '97px'}}>{title}</Typography>
         </AppBar>
     </Box>);
 };

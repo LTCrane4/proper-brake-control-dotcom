@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import './App.css'
 import NavBar from './components/NavBar';
+import { Box } from '@mui/material';
 
 function App() {
   const HomePage = React.lazy(() => import('./pages/Home'));
@@ -23,7 +24,9 @@ function App() {
   return (<>
     <NavBar title="Proper Brake Control" />
     <React.Suspense fallback={<div>Loading...</div>}>
-      <RouterProvider router={router} />
+      <Box sx={{ placeItems: 'center' }}>
+        <RouterProvider router={router} />
+      </Box>
     </React.Suspense>
   </>
   )
