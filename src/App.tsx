@@ -4,9 +4,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './App.css'
-import HomePage from './pages/Home';
+import NavBar from './components/NavBar';
 
 function App() {
+  const HomePage = React.lazy(() => import('./pages/Home'));
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -18,11 +20,12 @@ function App() {
     },
   ]);
 
-  return (
-    <React.StrictMode>
-      <h1>Proper Brake Control</h1>
+  return (<>
+    <NavBar title="Proper Brake Control" />
+    <React.Suspense fallback={<div>Loading...</div>}>
       <RouterProvider router={router} />
-    </React.StrictMode>
+    </React.Suspense>
+  </>
   )
 }
 
