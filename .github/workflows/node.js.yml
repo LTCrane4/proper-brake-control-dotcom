@@ -26,12 +26,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-
-    - name: Set Node.js 16.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18.x
   
     - name: Run install
       uses: borales/actions-yarn@v4
@@ -39,6 +33,6 @@ jobs:
         cmd: install # will run `yarn install` command
     
     - name: Run Build
-      uses: borales/actions-yarn@4
+      uses: borales/actions-yarn@v4
       with:
         cmd: build
