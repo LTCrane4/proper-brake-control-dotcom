@@ -21,10 +21,24 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
+
+    - name: Set Node.js 16.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+  
+    - name: Run install
+      uses: borales/actions-yarn@v4
+      with:
+        cmd: install # will run `yarn install` command
+    
+    - name: Run Build
+      uses: borales/actions-yarn@4
+      with:
+        cmd: build
