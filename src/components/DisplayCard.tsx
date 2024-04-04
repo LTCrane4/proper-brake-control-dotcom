@@ -1,8 +1,9 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
+import { ReactNode } from "react";
 
 export type DisplayCardProps = {
     title?: string;
-    content?: any;
+    content?: ReactNode;
 };
 
 export const DisplayCard = ({ title, content }: DisplayCardProps): JSX.Element => {
