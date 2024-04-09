@@ -9,11 +9,20 @@ import { Box } from '@mui/material';
 
 function App() {
   const HomePage = React.lazy(() => import('./pages/Home'));
+  const AboutPage = React.lazy(() => import('./pages/About'));
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <HomePage />,
+    },
+    {
+      path: "/home",
+      element: <HomePage />,
+    },
+    {
+      path: "/about",
+      element: <AboutPage />,
     },
     {
       path: "/test",
